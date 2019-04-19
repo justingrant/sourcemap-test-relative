@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import { isValidNumber } from 'libphonenumber-js';
 import { produce } from 'immer';
+import Amplify from 'aws-amplify';
 
 function component() {
   let html = '';
@@ -13,6 +14,10 @@ function component() {
 
   // call libphonenumber-js
   html += `<div>${isValidNumber('415-555-1234')}<div>`;
+
+  // pull in AWS Amplify code too
+  console.log (Amplify.UI);
+  console.log (Amplify.API);
 
   let element = document.createElement('div');
   element.innerHTML = html;
